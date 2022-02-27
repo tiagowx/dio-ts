@@ -1,6 +1,17 @@
-function addApendInList <T>(array:T[], valor: T) 
-{
-  return array.map(()=> valor);
+interface IUsuario {
+  id:string;
+  email:string;
 }
 
-addApendInList([1,2,3],4)
+interface IAdmin extends IUsuario {
+  cargo:'gerente'| 'coordenador' | 'supervisor';
+}
+
+
+function redirect (user: IUsuario | IAdmin) {
+  if ('cargo' in user){
+    // redireciona para área administrativa
+  }
+
+  // redireciona para area comum
+}
